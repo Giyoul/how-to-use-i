@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-outfit: "Outfit", sans-serif;
+
+  /* Brand colors */
+  --color-primary: #3D8A5A;
+  --color-primary-light: #EDF7F1;
+  --color-primary-muted: #C8F0D8;
+
+  /* Backgrounds */
+  --color-background: #F5F4F1;
+  --color-surface: #FFFFFF;
+
+  /* Text */
+  --color-text-primary: #1A1918;
+  --color-text-secondary: #6D6C6A;
+  --color-text-tertiary: #9C9B99;
+  --color-text-placeholder: #C8C7C5;
+
+  /* Border */
+  --color-border: #E5E4E1;
+  --color-border-input: #D1D0CD;
+
+  /* Badge - green (홀수 질문) */
+  --color-badge-green-bg: #EDF7F1;
+  --color-badge-green-text: #3D8A5A;
+
+  /* Badge - orange (짝수 질문) */
+  --color-badge-orange-bg: #FDE8DA;
+  --color-badge-orange-text: #D89575;
+
+  /* Kakao */
+  --color-kakao: #FEE500;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-outfit);
+}

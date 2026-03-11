@@ -1,0 +1,1890 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "VISBd",
+      "x": 941,
+      "y": 0,
+      "name": "2. 나의 사용법 - 뷰",
+      "width": 402,
+      "fill": "#F5F4F1",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "EbiQq",
+          "name": "vSB",
+          "width": "fill_container",
+          "height": 62,
+          "padding": [
+            0,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "3luW2",
+              "fill": "#1A1918",
+              "content": "9:41",
+              "fontFamily": "Outfit",
+              "fontSize": 15,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "52UVI",
+              "name": "vSBSpacer",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "E8HHU",
+              "name": "vSBRight",
+              "gap": 5,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "EhxWt",
+                  "width": 16,
+                  "height": 14,
+                  "iconFontName": "signal",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1918"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "FZKir",
+                  "width": 22,
+                  "height": 14,
+                  "iconFontName": "battery-full",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1918"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "86MHJ",
+          "name": "viewContent",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            4,
+            24,
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "nlLfD",
+              "name": "vNavHdr",
+              "width": "fill_container",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fVow6",
+                  "fill": "#1A1918",
+                  "content": "나의 사용법",
+                  "fontFamily": "Outfit",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ea1Iu",
+              "name": "vProfileCard",
+              "width": "fill_container",
+              "fill": "#3D8A5A",
+              "cornerRadius": 20,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#3D8A5A30",
+                "offset": {
+                  "x": 0,
+                  "y": 4
+                },
+                "blur": 20
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "vE6eR",
+                  "name": "vAvatar",
+                  "width": 52,
+                  "height": 52,
+                  "fill": "#FFFFFF28",
+                  "cornerRadius": 26,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "SJsQx",
+                      "fill": "#FFFFFF",
+                      "content": "김",
+                      "fontFamily": "Outfit",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "AZ0rL",
+                  "fill": "#FFFFFF",
+                  "content": "김민준",
+                  "fontFamily": "Outfit",
+                  "fontSize": 22,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "PIeD8",
+                  "name": "vIntroText",
+                  "fill": "#FFFFFFCC",
+                  "content": "제품 디자이너 · 팀워크를 좋아합니다",
+                  "fontFamily": "Outfit",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "kjpuF",
+                  "fill": "#FFFFFFCC",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "저를 더 잘 이해할 수 있도록\n8가지 질문에 솔직하게 답했어요",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "3vuJn",
+                  "fill": "#FFFFFF80",
+                  "content": "2024년 3월 작성",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "k7Ev3",
+              "fill": "#9C9B99",
+              "content": "나의 이야기",
+              "fontFamily": "Outfit",
+              "fontSize": 12,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "uvCBj",
+              "name": "vc1",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                18,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "uwoPL",
+                  "name": "vc1Hdr",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "5r8Sd",
+                      "name": "vc1Badge",
+                      "width": 22,
+                      "height": 22,
+                      "fill": "#EDF7F1",
+                      "cornerRadius": 11,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "UDcCw",
+                          "fill": "#3D8A5A",
+                          "content": "01",
+                          "fontFamily": "Outfit",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "v9moP",
+                      "fill": "#6D6C6A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "나에게 성공이란?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ks53E",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E5E4E1"
+                },
+                {
+                  "type": "text",
+                  "id": "tkiCY",
+                  "fill": "#1A1918",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "하루를 마무리할 때 오늘 최선을 다했다는 느낌이 드는 것. 결과보다 과정에서 오는 만족감이에요.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Outfit",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lnmaE",
+              "name": "vc2",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                18,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "5md3x",
+                  "name": "vc2Hdr",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "8BRwL",
+                      "name": "vc2Badge",
+                      "width": 22,
+                      "height": 22,
+                      "fill": "#FDE8DA",
+                      "cornerRadius": 11,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "2lRHO",
+                          "fill": "#D89575",
+                          "content": "02",
+                          "fontFamily": "Outfit",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "kWbwR",
+                      "fill": "#6D6C6A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "나를 동기부여 시키는것은?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fTJb9",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E5E4E1"
+                },
+                {
+                  "type": "text",
+                  "id": "7XR7A",
+                  "fill": "#1A1918",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "새로운 것을 배웠을 때의 흥분과 성장하는 느낌. 어제보다 조금 더 나아졌다는 것을 느낄 때 에너지가 생겨요.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Outfit",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "u7suA",
+              "name": "vc3",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                18,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "t2hZL",
+                  "name": "vc3Hdr",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "FuO90",
+                      "name": "vc3Badge",
+                      "width": 22,
+                      "height": 22,
+                      "fill": "#EDF7F1",
+                      "cornerRadius": 11,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "DVaqx",
+                          "fill": "#3D8A5A",
+                          "content": "03",
+                          "fontFamily": "Outfit",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "wkEXq",
+                      "fill": "#6D6C6A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "나의 커뮤니케이션 스타일은?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gsK5j",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E5E4E1"
+                },
+                {
+                  "type": "text",
+                  "id": "DQC2a",
+                  "fill": "#1A1918",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "직접적이고 솔직하게 이야기하는 편이에요. 돌려말하기보다 핵심을 빠르게 전달하고 싶어해요.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Outfit",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hg7ih",
+              "name": "vc4",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                18,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "TgBM9",
+                  "name": "vc4Hdr",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "toQ42",
+                      "name": "vc4Badge",
+                      "width": 22,
+                      "height": 22,
+                      "fill": "#FDE8DA",
+                      "cornerRadius": 11,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "JkCyg",
+                          "fill": "#D89575",
+                          "content": "04",
+                          "fontFamily": "Outfit",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "N0wBx",
+                      "fill": "#6D6C6A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "상대를 불편하게 만들 수 있는 나만의 성격은?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kXU4Q",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E5E4E1"
+                },
+                {
+                  "type": "text",
+                  "id": "KQtrc",
+                  "fill": "#1A1918",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "빠른 결론을 원하다 보니 상대의 고민 과정을 기다려주지 못할 때가 있어요.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Outfit",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "jFG4v",
+              "name": "vc5",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                18,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "z55Pq",
+                  "name": "vc5Hdr",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "pSwLp",
+                      "name": "vc5Badge",
+                      "width": 22,
+                      "height": 22,
+                      "fill": "#EDF7F1",
+                      "cornerRadius": 11,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "65HNd",
+                          "fill": "#3D8A5A",
+                          "content": "05",
+                          "fontFamily": "Outfit",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "vDDT9",
+                      "fill": "#6D6C6A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "나에게 신뢰를 얻거나 잃게 만드는 것은?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EniXV",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E5E4E1"
+                },
+                {
+                  "type": "text",
+                  "id": "Hu3v3",
+                  "fill": "#1A1918",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "작은 약속도 소중히 여겨요. 말과 행동이 일치하지 않는 사람에게는 신뢰를 잃게 되고, 지키는 사람에게는 깊은 신뢰가 생겨요.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Outfit",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "6Yy1t",
+              "name": "vc6",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                18,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "qQUDU",
+                  "name": "vc6Hdr",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ce4df",
+                      "name": "vc6Badge",
+                      "width": 22,
+                      "height": 22,
+                      "fill": "#FDE8DA",
+                      "cornerRadius": 11,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "O33k6",
+                          "fill": "#D89575",
+                          "content": "06",
+                          "fontFamily": "Outfit",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "VvCWo",
+                      "fill": "#6D6C6A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "나만의 강점은?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "RqpoG",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E5E4E1"
+                },
+                {
+                  "type": "text",
+                  "id": "OdLeI",
+                  "fill": "#1A1918",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "문제를 구조적으로 분석하고 핵심을 빠르게 파악하는 능력. 복잡한 상황에서도 차분하게 정리하는 것을 잘해요.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Outfit",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bX05G",
+              "name": "vc7",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                18,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "80uEd",
+                  "name": "vc7Hdr",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "rqK3n",
+                      "name": "vc7Badge",
+                      "width": 22,
+                      "height": 22,
+                      "fill": "#EDF7F1",
+                      "cornerRadius": 11,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ulrGu",
+                          "fill": "#3D8A5A",
+                          "content": "07",
+                          "fontFamily": "Outfit",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "gkh3O",
+                      "fill": "#6D6C6A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "나의 발전방향은?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DvYFD",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E5E4E1"
+                },
+                {
+                  "type": "text",
+                  "id": "wocVM",
+                  "fill": "#1A1918",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "감정에 대한 이해를 높이고, 상대의 관점에서 더 깊이 공감하는 것이 목표예요. 느린 것도 가치 있다는 것을 배우고 싶어요.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Outfit",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "psn0h",
+              "name": "vc8",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                18,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "4Trkl",
+                  "name": "vc8Hdr",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "qW8g3",
+                      "name": "vc8Badge",
+                      "width": 22,
+                      "height": 22,
+                      "fill": "#FDE8DA",
+                      "cornerRadius": 11,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "RXDLJ",
+                          "fill": "#D89575",
+                          "content": "08",
+                          "fontFamily": "Outfit",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "fCi3n",
+                      "fill": "#6D6C6A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "살면서 느낀 가장 큰 성취감은?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "MQcCA",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E5E4E1"
+                },
+                {
+                  "type": "text",
+                  "id": "zscV2",
+                  "fill": "#1A1918",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "첫 프로젝트를 팀원들과 함께 완성했을 때예요. 새벽까지 함께했던 그 시간이, 지금도 가장 따뜻한 기억으로 남아있어요.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Outfit",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "f3dSr",
+              "name": "vFooter",
+              "width": "fill_container",
+              "fill": "#EDECEA",
+              "cornerRadius": 16,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 20,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "SsSdg",
+                  "fill": "#6D6C6A",
+                  "content": "나의 사용법",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "cQD6K",
+                  "fill": "#9C9B99",
+                  "content": "howToUseI.com/share/kiminjun",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "8K5Y9",
+          "name": "vStickyBar",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#E5E4E180",
+            "offset": {
+              "x": 0,
+              "y": -1
+            }
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "cKWk0",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "#E5E4E1"
+            },
+            {
+              "type": "frame",
+              "id": "IY2z4",
+              "name": "vStickyInner",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "padding": [
+                16,
+                20,
+                34,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "EXAhL",
+                  "name": "vShareFull",
+                  "width": "fill_container",
+                  "height": 52,
+                  "fill": "#3D8A5A",
+                  "cornerRadius": 26,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "kVa4K",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "share-2",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "eH55r",
+                      "fill": "#FFFFFF",
+                      "content": "공유하기",
+                      "fontFamily": "Outfit",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "NWBgV",
+      "x": 0,
+      "y": 0,
+      "name": "1. 나의 사용법 - 편집",
+      "width": 402,
+      "fill": "#F5F4F1",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "pOk1k",
+          "name": "editSB",
+          "width": "fill_container",
+          "height": 62,
+          "padding": [
+            0,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "N28Ca",
+              "fill": "#1A1918",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "TgD8S",
+              "name": "editSBSpacer",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "KvBTy",
+              "name": "editSBRight",
+              "gap": 5,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "qQoTd",
+                  "width": 16,
+                  "height": 14,
+                  "iconFontName": "signal",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1918"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "THHtJ",
+                  "width": 22,
+                  "height": 14,
+                  "iconFontName": "battery-full",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1918"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GM5DT",
+          "name": "editContent",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            4,
+            24,
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "rrFAI",
+              "name": "editHdr",
+              "width": "fill_container",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "4S2nF",
+                  "fill": "#1A1918",
+                  "content": "나의 사용법",
+                  "fontFamily": "Outfit",
+                  "fontSize": 22,
+                  "fontWeight": "600",
+                  "letterSpacing": -0.3
+                },
+                {
+                  "type": "frame",
+                  "id": "zAmKr",
+                  "name": "editHdrSpacer",
+                  "width": "fill_container",
+                  "height": 1
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "mRVIY",
+              "fill": "#6D6C6A",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "한 질문씩 차근차근 나를 소개해봐요",
+              "lineHeight": 1.5,
+              "fontFamily": "Outfit",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "60HoY",
+              "name": "progressSec",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "VNy0u",
+                  "name": "counterRow",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "W8ZYd",
+                      "fill": "#6D6C6A",
+                      "content": "질문",
+                      "fontFamily": "Outfit",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Nd220",
+                      "fill": "#3D8A5A",
+                      "content": "1 / 9",
+                      "fontFamily": "Outfit",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "09OnK",
+                  "name": "progressBarBg",
+                  "width": "fill_container",
+                  "height": 6,
+                  "fill": "#E5E4E1",
+                  "cornerRadius": 3,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "P3n31",
+                      "x": 0,
+                      "y": 0,
+                      "width": 39,
+                      "height": 6,
+                      "fill": "#3D8A5A",
+                      "cornerRadius": 3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "d3k59",
+              "name": "singleCard",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 20,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 16
+              },
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                22,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "kcx57",
+                  "name": "sBadgeRow",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "TOeAr",
+                      "name": "sBadge",
+                      "width": 34,
+                      "height": 34,
+                      "fill": "#C8F0D8",
+                      "cornerRadius": 17,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "JtqOj",
+                          "fill": "#3D8A5A",
+                          "content": "01",
+                          "fontFamily": "Outfit",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "FhBH1",
+                      "fill": "#1A1918",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "나를 소개해요",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Outfit",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "8PB4L",
+                  "fill": "#9C9B99",
+                  "content": "이름",
+                  "fontFamily": "Outfit",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "b0ApN",
+                  "name": "n1",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#F5F4F1",
+                  "cornerRadius": 10,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#D1D0CD"
+                  },
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fzDEo",
+                      "fill": "#C8C7C5",
+                      "content": "내 이름을 입력해주세요",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "etHkm",
+                  "fill": "#9C9B99",
+                  "content": "한 줄 소개",
+                  "fontFamily": "Outfit",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "tTRVE",
+                  "name": "n2",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#F5F4F1",
+                  "cornerRadius": 10,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#D1D0CD"
+                  },
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "yNL1y",
+                      "fill": "#C8C7C5",
+                      "content": "나를 한 줄로 표현한다면...",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "9Sdpn",
+              "name": "navRow",
+              "width": "fill_container",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "9acAZ",
+                  "name": "prevBtn",
+                  "opacity": 0.4,
+                  "width": "fill_container",
+                  "height": 52,
+                  "fill": "#EDECEA",
+                  "cornerRadius": 26,
+                  "gap": 6,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "nhdFS",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "chevron-left",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6D6C6A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "xGvUK",
+                      "fill": "#6D6C6A",
+                      "content": "이전",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "6HyTX",
+                  "name": "nextBtn",
+                  "width": "fill_container",
+                  "height": 52,
+                  "fill": "#3D8A5A",
+                  "cornerRadius": 26,
+                  "gap": 6,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Q3zhR",
+                      "fill": "#FFFFFF",
+                      "content": "다음",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "LPIEG",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "iK7dW",
+      "x": 471,
+      "y": 0,
+      "name": "1b. 편집 - 마지막 질문 (9/9)",
+      "width": 402,
+      "fill": "#F5F4F1",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "pK4S0",
+          "name": "s9SB",
+          "width": "fill_container",
+          "height": 62,
+          "padding": [
+            0,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "f5HbY",
+              "fill": "#1A1918",
+              "content": "9:41",
+              "fontFamily": "Outfit",
+              "fontSize": 15,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "xbxGo",
+          "name": "s9C",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            4,
+            24,
+            40,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "1emCq",
+              "name": "s9H",
+              "width": "fill_container",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lvzOW",
+                  "fill": "#1A1918",
+                  "content": "나의 사용법",
+                  "fontFamily": "Outfit",
+                  "fontSize": 22,
+                  "fontWeight": "600",
+                  "letterSpacing": -0.3
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "Q0i2m",
+              "fill": "#6D6C6A",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "한 질문씩 차근차근 나를 소개해봐요",
+              "lineHeight": 1.5,
+              "fontFamily": "Outfit",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "sEa0U",
+              "name": "s9P",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "XGRFR",
+                  "name": "s9PR",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "mbqKZ",
+                      "fill": "#6D6C6A",
+                      "content": "질문",
+                      "fontFamily": "Outfit",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "9Kx5Y",
+                      "fill": "#3D8A5A",
+                      "content": "9 / 9",
+                      "fontFamily": "Outfit",
+                      "fontSize": 12,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "6sxhF",
+                  "name": "s9PBg",
+                  "width": "fill_container",
+                  "height": 6,
+                  "fill": "#E5E4E1",
+                  "cornerRadius": 3,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Vmlou",
+                      "x": 0,
+                      "y": 0,
+                      "width": 354,
+                      "height": 6,
+                      "fill": "#3D8A5A",
+                      "cornerRadius": 3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qf80m",
+              "name": "s9Card",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 20,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 16
+              },
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                22,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "dMMr2",
+                  "name": "s9BR",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "D03QN",
+                      "name": "s9Bdg",
+                      "width": 34,
+                      "height": 34,
+                      "fill": "#FDE8DA",
+                      "cornerRadius": 17,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "AXaeG",
+                          "fill": "#D89575",
+                          "content": "09",
+                          "fontFamily": "Outfit",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "agCbC",
+                      "fill": "#1A1918",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "살면서 느낀 가장 큰 성취감은?",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Outfit",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tZKKD",
+                  "name": "s9AA",
+                  "width": "fill_container",
+                  "fill": "#FAFAF8",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E4E1"
+                  },
+                  "layout": "vertical",
+                  "padding": [
+                    14,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uCija",
+                      "fill": "#9C9B99",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "답변을 자유롭게 적어주세요...",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "WlPbc",
+              "name": "s9Save",
+              "width": "fill_container",
+              "height": 56,
+              "fill": "#3D8A5A",
+              "cornerRadius": 28,
+              "gap": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "EQDOB",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "check",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "L0cg3",
+                  "fill": "#FFFFFF",
+                  "content": "저장하기",
+                  "fontFamily": "Outfit",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "3bQJe",
+      "x": -480,
+      "y": 0,
+      "name": "0. 온보딩 - 로그인",
+      "width": 402,
+      "height": 932,
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "GY2pR",
+          "name": "lgnHero",
+          "width": "fill_container",
+          "height": 530,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 180,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#B8E8C6",
+                "position": 0
+              },
+              {
+                "color": "#E4F4EB",
+                "position": 0.6
+              },
+              {
+                "color": "#F5F4F1",
+                "position": 1
+              }
+            ]
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            0,
+            40,
+            24,
+            40
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "on9nP",
+              "name": "sproutCircle",
+              "width": 168,
+              "height": 168,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1773235979771.png",
+                "mode": "fill"
+              },
+              "cornerRadius": 84
+            },
+            {
+              "type": "text",
+              "id": "RTdwZ",
+              "fill": "#1A1918",
+              "content": "나의 사용법",
+              "fontFamily": "Outfit",
+              "fontSize": 34,
+              "fontWeight": "700",
+              "letterSpacing": -0.8
+            },
+            {
+              "type": "frame",
+              "id": "CpFxB",
+              "name": "lgnTagRow",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "r3wgu",
+                  "width": 15,
+                  "height": 15,
+                  "iconFontName": "sprout",
+                  "iconFontFamily": "lucide",
+                  "fill": "#3D8A5A"
+                },
+                {
+                  "type": "text",
+                  "id": "KWWZx",
+                  "fill": "#6D6C6A",
+                  "content": "나를 이해하는 8가지 이야기",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "kZsqE",
+          "name": "lgnCard",
+          "width": "fill_container",
+          "height": "fill_container",
+          "fill": "#FFFFFF",
+          "cornerRadius": [
+            24,
+            24,
+            0,
+            0
+          ],
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            32,
+            28,
+            48,
+            28
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "sTqpw",
+              "fill": "#1A1918",
+              "content": "나답게 소개해봐요",
+              "fontFamily": "Outfit",
+              "fontSize": 24,
+              "fontWeight": "700",
+              "letterSpacing": -0.3
+            },
+            {
+              "type": "text",
+              "id": "qmQDk",
+              "fill": "#6D6C6A",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "8가지 질문에 답하면\n나만의 사용법이 완성돼요",
+              "lineHeight": 1.6,
+              "fontFamily": "Outfit",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "lcUcM",
+              "name": "lgnSpacer",
+              "width": "fill_container",
+              "height": "fill_container"
+            },
+            {
+              "type": "frame",
+              "id": "4Nrp8",
+              "name": "kakaoBtn",
+              "width": "fill_container",
+              "height": 54,
+              "fill": "#FEE500",
+              "cornerRadius": 14,
+              "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "weLmk",
+                  "width": 22,
+                  "height": 22,
+                  "iconFontName": "message-circle",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1918"
+                },
+                {
+                  "type": "text",
+                  "id": "M4M16",
+                  "fill": "#1A1918",
+                  "content": "카카오로 시작하기",
+                  "fontFamily": "Outfit",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "WSkIg",
+              "fill": "#9C9B99",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "시작하면 서비스 이용약관 및 개인정보처리방침에 동의하게 됩니다",
+              "lineHeight": 1.5,
+              "textAlign": "center",
+              "fontFamily": "Outfit",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
