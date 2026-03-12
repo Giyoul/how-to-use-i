@@ -15,8 +15,10 @@ export default function OnboardingPage() {
       >
         <div
           className="relative overflow-hidden rounded-full"
-          style={{ width: 168, height: 168 }}
+          style={{ width: 168, height: 168, background: "#C8F0D8" }}
         >
+          {/* Skeleton */}
+          <div className="absolute inset-0 animate-pulse" style={{ background: "#B8E8C6" }} />
           <Image
             src="/images/generated-1773235979771.png"
             alt="나 사용법"

@@ -2,10 +2,18 @@
 
 import { MessageCircle } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function KakaoLoginButton() {
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    function handlePageShow(e: PageTransitionEvent) {
+      if (e.persisted) setLoading(false);
+    }
+    window.addEventListener("pageshow", handlePageShow);
+    return () => window.removeEventListener("pageshow", handlePageShow);
+  }, []);
 
   async function handleLogin() {
     setLoading(true);
