@@ -6,11 +6,12 @@
 
 | 분류 | 기술 | 선정 근거 |
 |------|------|-----------|
-| Frontend Framework | Next.js 15 (App Router) | Vercel 무료 배포 최적화, SSR/SSG 혼합 지원 |
-| Styling | Tailwind CSS | 빠른 모바일 UI 구현, 디자인 토큰 관리 용이 |
+| Frontend Framework | Next.js 16 (App Router) | Vercel 무료 배포 최적화, SSR/SSG 혼합 지원 |
+| Styling | Tailwind CSS v4 | 빠른 모바일 UI 구현, CSS @theme 토큰 관리 |
 | Auth + DB | Supabase (Free Tier) | 카카오 OAuth 내장, PostgreSQL 500MB 무료 |
 | 배포 | Vercel (Hobby Plan) | 무료, Next.js 네이티브 지원 |
 | 폰트 | Google Fonts (Outfit) | 무료, `next/font` 최적화 내장 |
+| 아이콘 | lucide-react | 디자인 스펙 아이콘셋과 동일 |
 
 ### 대안 비교
 
@@ -23,7 +24,7 @@
 | 운영 복잡도 | 낮음 | 낮음 | 높음 (3개 서비스) |
 | **결론** | **선택** | 차선 | 제외 |
 
-**Supabase 선택 핵심 근거**: 카카오 OAuth를 별도 백엔드 없이 Auth Provider 설정만으로 해결. 타입 안전한 DB 클라이언트로 Next.js Server Actions와 직접 연동.
+**Supabase 선택 핵심 근거**: 카카오 OAuth를 별도 백엔드 없이 Auth Provider 설정만으로 해결. Vercel + Supabase로 완전 무료 운용 가능.
 
 ---
 
@@ -37,7 +38,7 @@
          │
          ▼
   Vercel Edge Network
-    └── Next.js 15 App Router
+    └── Next.js 16 App Router
           ├── Client Components (편집 폼)
           └── Server Components / Server Actions (프로필 조회/저장)
                     │
@@ -144,6 +145,8 @@ app/
     └── [username]/
         ├── page.tsx              ← 공개 프로필 (Server Component, SSR)
         └── opengraph-image.tsx   ← OG 이미지 동적 생성
+
+proxy.ts                          ← 세션 기반 접근 제어 (Next.js 16 명칭)
 ```
 
 ### 접근 제어
@@ -155,7 +158,7 @@ app/
 | `/share/[username]` | X | 누구나 접근 가능 |
 | `/auth/callback` | X | OAuth 콜백 처리 |
 
-> `middleware.ts`에서 Supabase 세션 쿠키 검증으로 처리.
+> Next.js 16에서 `middleware.ts` → `proxy.ts`로 명칭 변경. export 함수명도 `middleware` → `proxy`.
 
 ### 렌더링 전략
 
@@ -230,13 +233,19 @@ formData: {
 ```
 1. 애플리케이션 생성
 2. 플랫폼 → Web → 사이트 도메인 등록:
-   https://{your-project}.vercel.app
+   https://how-to-use-i.vercel.app
 3. 카카오 로그인 활성화 (ON)
 4. Redirect URI 등록:
-   https://{supabase-project-id}.supabase.co/auth/v1/callback
-5. 동의항목: 닉네임 (필수)
-6. 앱 키 확인: REST API 키, Client Secret
+   https://REDACTED.supabase.co/auth/v1/callback
+5. 동의항목:
+   - 닉네임(profile_nickname): 필수 동의
+   - 프로필 사진(profile_image): 선택 동의
+   ※ 이메일은 비즈니스 채널 연결 필요 → 사용 안 함
+6. 보안 → Client Secret 생성 후 상태를 "사용"으로 변경
 ```
+
+> **주의**: 이메일 동의항목은 카카오 비즈니스 채널 연결이 없으면 활성화 불가.
+> 코드에서 scopes를 `"profile_nickname profile_image"`로 명시해 이메일 요청을 제외.
 
 ### Supabase 설정
 
@@ -247,10 +256,18 @@ Authentication → Providers → Kakao
   Client Secret: 카카오 Client Secret 코드
 
 Authentication → URL Configuration
-  Site URL: https://{your-project}.vercel.app
+  Site URL: https://how-to-use-i.vercel.app
   Redirect URLs:
-    https://{your-project}.vercel.app/auth/callback
-    http://localhost:3000/auth/callback
+    https://how-to-use-i.vercel.app/auth/callback
+```
+
+### 유저 식별 방식
+
+이메일 없이 카카오 고유 ID(sub)로 식별.
+
+```
+카카오 고유 ID → Supabase가 UUID로 변환 (auth.users.id)
+              → profiles.id (FK) 로 연결
 ```
 
 ### Supabase Free Tier 한도
@@ -261,53 +278,33 @@ Authentication → URL Configuration
 | DB 용량 | 500MB | 프로필당 ~2KB → 25만 명까지 |
 | API 요청 | 무제한 | - |
 
-### OAuth 콜백 처리 (`/auth/callback/route.ts`)
-
-```
-1. URL에서 code 파라미터 추출
-2. supabase.auth.exchangeCodeForSession(code) 호출
-3. 신규 사용자 → username 자동생성 후 profiles INSERT
-4. 기존 사용자 → /edit 리다이렉트
-5. 오류 시 → / 리다이렉트
-```
-
 ---
 
 ## 7. 배포 전략
 
-### Vercel 설정
+### 배포 환경
 
 ```
-1. vercel.com → New Project → GitHub 저장소 연결
-2. Framework: Next.js (자동 감지)
-3. 환경 변수 설정:
-   NEXT_PUBLIC_SUPABASE_URL
-   NEXT_PUBLIC_SUPABASE_ANON_KEY
+GitHub:  https://github.com/Giyoul/how-to-use-i
+Vercel:  https://how-to-use-i.vercel.app
+Supabase Project ID: REDACTED
 ```
+
+### 환경 변수 (Vercel)
+
+```
+NEXT_PUBLIC_SUPABASE_URL      = https://REDACTED.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY = (Supabase → Project Settings → API → anon key)
+```
+
+> **주의**: Vercel 환경 변수 입력 시 URL 끝에 슬래시(/) 또는 중복 URL이 들어가지 않도록 주의.
+> 잘못 입력 시 OAuth URL이 중복 연결되는 버그 발생.
 
 ### 브랜치 전략
 
 ```
-main      → Production 배포
-develop   → Preview 배포 (자동 Preview URL)
+main      → Production 배포 (how-to-use-i.vercel.app)
 feature/* → PR 생성 시 Preview URL 자동 생성
-```
-
-### 배포 체크리스트
-
-```
-초기 배포 전:
-  [ ] Supabase 스키마 적용 및 RLS 활성화
-  [ ] 카카오 Redirect URI 등록
-  [ ] Supabase Auth Kakao Provider 설정
-  [ ] Vercel 환경 변수 입력
-  [ ] Vercel Production URL → 카카오 플랫폼 도메인 추가
-
-배포 후 검증:
-  [ ] 카카오 로그인 플로우
-  [ ] 프로필 저장 → /share/{username} 접근
-  [ ] 카카오톡 공유 시 OG 이미지 미리보기
-  [ ] 모바일 레이아웃 (402px 기준)
 ```
 
 ---
@@ -338,40 +335,55 @@ feature/* → PR 생성 시 Preview URL 자동 생성
 
 **트레이드오프**: 특정 스텝 URL 직접 공유 불가. 로컬 스토리지 임시 저장으로 새로고침 대응.
 
+### ADR-004: Supabase 클라이언트에 Database 제네릭 미적용
+
+**결정**: `createBrowserClient()`, `createServerClient()` 호출 시 Database 제네릭 타입 미전달. 쿼리 결과는 필요한 곳에서 수동 캐스팅.
+
+**이유**: `@supabase/supabase-js` 2.99.1에서 `SupabaseClient` 제네릭 구조가 변경됨. `@supabase/ssr` 0.6.1의 반환 타입(`SupabaseClient<DB, SchemaName, Schema>`)이 새 구조와 충돌해 테이블 타입이 `never`로 추론되는 버그 발생.
+
+**트레이드오프**: DB 쿼리에 대한 컴파일 타임 타입 안전성 없음. 도메인 타입(`Profile`, `Answers`)은 `lib/supabase/types.ts`에서 수동 관리.
+
 ---
 
 ## 9. 개발 Phase
 
-### Phase 1 — 프로젝트 기반 세팅
+### Phase 1 — 프로젝트 기반 세팅 ✅ 완료
 **목표**: 개발 환경 완성. 이후 phase에서 UI/기능 작업만 집중할 수 있는 상태.
 
 ```
-[ ] Next.js 15 프로젝트 생성 (TypeScript, App Router, Tailwind CSS)
-[ ] Tailwind 디자인 토큰 설정 (colors, fontFamily: Outfit)
-[ ] Supabase 프로젝트 생성
-[ ] DB 스키마 적용 (profiles 테이블 + RLS 정책)
-[ ] Supabase 환경 변수 연결 (.env.local)
-[ ] Vercel 프로젝트 연결 + 환경 변수 등록
-[ ] GitHub 저장소 생성 + main/develop 브랜치 전략 세팅
+[x] Next.js 16 프로젝트 생성 (TypeScript, App Router, Tailwind CSS v4)
+[x] Tailwind 디자인 토큰 설정 (CSS @theme 방식)
+[x] Supabase 프로젝트 생성
+[x] DB 스키마 작성 (supabase/schema.sql)
+[x] Supabase 환경 변수 연결 (.env.local)
+[x] Vercel 프로젝트 연결 + 환경 변수 등록
+[x] GitHub 저장소 연결 (main 브랜치)
 ```
 
-**완료 기준**: `npm run dev` 실행 시 빈 Next.js 앱이 뜨고, Supabase DB 연결이 정상 동작.
+**실제 버전**: Next.js 15로 계획했으나 `npm install next@latest` 시 16.1.6으로 설치됨.
+**Tailwind 변경**: `tailwind.config.ts` 방식 대신 Tailwind v4의 `CSS @theme` 방식 사용.
 
 ---
 
-### Phase 2 — 인증 플로우
+### Phase 2 — 인증 플로우 🔄 진행 중
 **목표**: 카카오 로그인 → 세션 생성 → 리다이렉트 전체 흐름 완성.
 
 ```
-[ ] 카카오 Developers 앱 생성 + Redirect URI 등록
-[ ] Supabase Auth Kakao Provider 설정
-[ ] 온보딩 페이지 UI 구현 (/, 로그인 버튼)
-[ ] /auth/callback route 구현 (OAuth 콜백 + 신규 유저 profiles INSERT)
-[ ] middleware.ts 구현 (세션 기반 접근 제어)
-[ ] 로그인 → /edit 리다이렉트 검증
+[x] 카카오 Developers 앱 생성 + Redirect URI 등록
+[x] Supabase Auth Kakao Provider 설정
+[x] 온보딩 페이지 UI 구현 (/, 로그인 버튼)
+[x] /auth/callback route 구현 (OAuth 콜백 + 신규 유저 profiles INSERT)
+[x] proxy.ts 구현 (세션 기반 접근 제어, Next.js 16 명칭)
+[ ] 로그인 → /edit 리다이렉트 검증 (카카오 동의항목 설정 완료 후)
 ```
 
 **완료 기준**: 카카오 로그인 후 /edit로 이동, Supabase에 profiles 행 생성 확인.
+
+**트러블슈팅 기록**:
+- `middleware.ts` → Next.js 16에서 `proxy.ts`로 파일명 변경, export 함수명도 `proxy`로 변경
+- Supabase 환경 변수 잘못 입력 시 URL 이중 연결 버그 → Vercel 환경 변수 값 재확인 필요
+- 카카오 KOE205 에러: Supabase가 기본으로 `account_email`, `profile_image` 스코프 요청 → `signInWithOAuth` 호출 시 `scopes: "profile_nickname profile_image"` 명시로 해결
+- 카카오 이메일 동의항목은 비즈니스 채널 연결 없이 활성화 불가 → 이메일 미수집으로 설계 변경
 
 ---
 
@@ -419,8 +431,7 @@ feature/* → PR 생성 시 Preview URL 자동 생성
 [ ] 에러 상태 처리 (로그인 실패, 저장 실패, 404)
 [ ] 로딩 상태 UI (스켈레톤 또는 스피너)
 [ ] OG 이미지 동적 생성 (/share/[username]/opengraph-image.tsx)
-[ ] Vercel Production 배포
-[ ] 카카오 플랫폼 도메인 → Production URL 업데이트
+[ ] 카카오 플랫폼 도메인 최종 확인
 [ ] 실제 카카오 로그인 → 전체 플로우 E2E 검증
 ```
 
@@ -431,15 +442,15 @@ feature/* → PR 생성 시 Preview URL 자동 생성
 ### Phase별 의존성
 
 ```
-Phase 1 (세팅)
+Phase 1 (세팅) ✅
     │
     ▼
-Phase 2 (인증) ──────────────────────────────┐
-    │                                        │
-    ▼                                        ▼
-Phase 3 (편집)                          Phase 4 (공개 프로필)
-    │                                        │
-    └─────────────────┬──────────────────────┘
+Phase 2 (인증) 🔄 ──────────────────────────────┐
+    │                                            │
+    ▼                                            ▼
+Phase 3 (편집)                              Phase 4 (공개 프로필)
+    │                                            │
+    └─────────────────┬──────────────────────────┘
                       ▼
                 Phase 5 (배포)
 ```
@@ -450,21 +461,33 @@ Phase 3 (편집)                          Phase 4 (공개 프로필)
 
 ## 10. 디자인 시스템 토큰
 
-```typescript
-// tailwind.config.ts에 등록
-colors: {
-  primary: '#3D8A5A',
-  background: '#F5F4F1',
-  surface: '#FFFFFF',
-  'text-primary': '#1A1918',
-  'text-secondary': '#6D6C6A',
-  'text-tertiary': '#9C9B99',
-  border: '#E5E4E1',
-  'badge-green-bg': '#EDF7F1',
-  'badge-green-text': '#3D8A5A',
-  'badge-orange-bg': '#FDE8DA',
-  'badge-orange-text': '#D89575',
-  kakao: '#FEE500',
+Tailwind v4 방식으로 `app/globals.css`의 `@theme` 블록에 직접 정의.
+
+```css
+/* app/globals.css */
+@theme {
+  --font-outfit: "Outfit", sans-serif;
+
+  --color-primary: #3D8A5A;
+  --color-primary-light: #EDF7F1;
+  --color-primary-muted: #C8F0D8;
+
+  --color-background: #F5F4F1;
+  --color-surface: #FFFFFF;
+
+  --color-text-primary: #1A1918;
+  --color-text-secondary: #6D6C6A;
+  --color-text-tertiary: #9C9B99;
+  --color-text-placeholder: #C8C7C5;
+
+  --color-border: #E5E4E1;
+  --color-border-input: #D1D0CD;
+
+  --color-badge-green-bg: #EDF7F1;
+  --color-badge-green-text: #3D8A5A;
+  --color-badge-orange-bg: #FDE8DA;
+  --color-badge-orange-text: #D89575;
+
+  --color-kakao: #FEE500;
 }
 ```
-
