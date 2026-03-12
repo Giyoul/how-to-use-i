@@ -7,7 +7,7 @@ export const QUESTIONS: { key: QuestionKey; text: string }[] = [
   { key: "q4", text: "상대를 불편하게 만들수도 있는 나만의 성격은?" },
   { key: "q5", text: "나에게 신뢰를 얻거나 잃게 만드는 성격은?" },
   { key: "q6", text: "나만의 강점은?" },
-  { key: "q7", text: "나의 발전방향은?" },
+  { key: "q7", text: "발전시키고 싶은 역량이 하나 있다면?" },
   { key: "q8", text: "살면서 느낀 가장 큰 성취감은?" },
 ];
 
