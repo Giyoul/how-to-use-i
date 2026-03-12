@@ -1,6 +1,6 @@
 <div align="center">
-
-<img src="public/images/generated-1773235979771.png" width="120" alt="나 사용법" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:222831,10:393E46,30:37e09d,75:393E46,100:222831&height=100&section=header&text=&fontSize=0" width="100%"/>
+<br><br>
 
 # 나 사용법
 
@@ -31,12 +31,7 @@
 | Styling | Tailwind CSS v4 |
 | Auth & DB | Supabase |
 | Deploy | Vercel |
-
-**디자인**
-
-| | |
-|---|---|
-| Design Tool | [Pencil](https://www.pencilapp.io) |
+| Design Tool | [Pencil](https://www.pencil.dev/) |
 
 **AI**
 
