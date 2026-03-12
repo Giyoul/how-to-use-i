@@ -34,11 +34,6 @@ export async function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL("/", request.url));
   }
 
-  // 이미 로그인한 상태에서 / 접근 시 /edit로
-  if (user && request.nextUrl.pathname === "/") {
-    return NextResponse.redirect(new URL("/edit", request.url));
-  }
-
   return supabaseResponse;
 }
 
