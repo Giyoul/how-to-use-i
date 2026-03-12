@@ -49,7 +49,7 @@ export default async function SharePage({ params }: Props) {
   return (
     <div className="flex flex-col min-h-screen" style={{ background: "#F5F4F1" }}>
       {/* Scrollable content */}
-      <div className="flex flex-col gap-4 flex-1 w-full max-w-[800px] mx-auto px-6 py-6 md:py-10">
+      <div className="flex flex-col gap-4 flex-1 w-full max-w-[800px] mx-auto px-6 py-6 md:py-10 pb-28">
         {/* Nav header */}
         <div className="flex items-center justify-center">
           <span className="text-[#1A1918] font-semibold" style={{ fontSize: 18 }}>
@@ -99,8 +99,8 @@ export default async function SharePage({ params }: Props) {
         </div>
       </div>
 
-      {/* Sticky Share Bar */}
-      <div className="sticky bottom-0 bg-white w-full" style={{ boxShadow: "0 -1px 0 #E5E4E180" }}>
+      {/* Fixed Share Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white" style={{ boxShadow: "0 -1px 0 #E5E4E180" }}>
         <div className="max-w-[800px] mx-auto w-full">
           <ShareBar username={username} isOwner={isOwner} />
         </div>
