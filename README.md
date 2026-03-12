@@ -23,6 +23,8 @@
 
 ## 🛠 기술 스택
 
+**개발**
+
 | | |
 |---|---|
 | Framework | Next.js 16 (App Router) |
@@ -30,9 +32,15 @@
 | Auth & DB | Supabase |
 | Deploy | Vercel |
 
-## 📁 환경 변수
+**디자인**
 
-```
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-```
+| | |
+|---|---|
+| Design Tool | [Pencil](https://www.pencilapp.io) |
+
+**AI**
+
+| | |
+|---|---|
+| Coding Agent | Claude Code (claude-sonnet-4-6) |
+| Design MCP | Pencil MCP |
