@@ -18,15 +18,7 @@ export async function saveProfile(formData: FormData): Promise<{ redirectTo: str
 
   if (!user) return { redirectTo: "/" };
 
-  const { data: existing } = await supabase
-    .from("profiles")
-    .select("username")
-    .eq("id", user.id)
-    .single();
-
-  if (!existing) return { redirectTo: "/" };
-
-  const { error } = await supabase
+  const { data, error } = await supabase
     .from("profiles")
     .update({
       display_name: formData.displayName,
@@ -34,9 +26,11 @@ export async function saveProfile(formData: FormData): Promise<{ redirectTo: str
       answers: formData.answers,
       is_published: true,
     })
-    .eq("id", user.id);
+    .eq("id", user.id)
+    .select("username")
+    .single();
 
-  if (error) throw new Error(error.message);
+  if (error || !data) throw new Error(error?.message ?? "저장 실패");
 
-  return { redirectTo: `/share/${existing.username}` };
+  return { redirectTo: `/share/${data.username}` };
 }
