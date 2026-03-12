@@ -10,8 +10,9 @@ export function ShareButton({ username }: Props) {
 
   async function handleShare() {
     const url = `${window.location.origin}/share/${username}`;
+    const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
 
-    if (navigator.share) {
+    if (isMobile && navigator.share) {
       await navigator.share({ title: "나 사용법", url });
       return;
     }
