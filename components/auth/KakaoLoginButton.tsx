@@ -14,6 +14,7 @@ export function KakaoLoginButton() {
       provider: "kakao",
       options: {
         redirectTo: `${window.location.origin}/auth/callback`,
+        scopes: "profile_nickname profile_image",
       },
     });
     // 리다이렉트 후 로딩 상태 유지 (카카오 페이지로 이동)
