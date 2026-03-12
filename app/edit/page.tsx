@@ -20,25 +20,9 @@ export default async function EditPage() {
   const profile = data as Profile | null;
 
   return (
-    <main
-      className="flex flex-col min-h-screen"
-      style={{ maxWidth: 402, margin: "0 auto", background: "#F5F4F1" }}
-    >
-      {/* Status Bar */}
-      <div
-        className="flex items-center px-6"
-        style={{ height: 62 }}
-      >
-        <span className="text-[#1A1918] font-semibold" style={{ fontSize: 15 }}>
-          9:41
-        </span>
-      </div>
-
+    <main className="flex flex-col min-h-screen" style={{ background: "#F5F4F1" }}>
       {/* Content */}
-      <div
-        className="flex flex-col gap-4 flex-1"
-        style={{ padding: "4px 24px 40px" }}
-      >
+      <div className="flex flex-col gap-4 flex-1 w-full max-w-[600px] mx-auto px-6 py-6 md:py-12">
         <div className="flex items-center">
           <h1
             className="text-[#1A1918] font-semibold"

@@ -47,19 +47,9 @@ export default async function SharePage({ params }: Props) {
   const profile = data as Profile;
 
   return (
-    <div
-      className="flex flex-col min-h-screen"
-      style={{ maxWidth: 402, margin: "0 auto", background: "#F5F4F1" }}
-    >
-      {/* Status Bar */}
-      <div className="flex items-center justify-between px-6" style={{ height: 62 }}>
-        <span className="text-[#1A1918] font-semibold" style={{ fontSize: 15 }}>
-          9:41
-        </span>
-      </div>
-
+    <div className="flex flex-col min-h-screen" style={{ background: "#F5F4F1" }}>
       {/* Scrollable content */}
-      <div className="flex flex-col gap-4 flex-1" style={{ padding: "4px 24px 40px" }}>
+      <div className="flex flex-col gap-4 flex-1 w-full max-w-[800px] mx-auto px-6 py-6 md:py-10">
         {/* Nav header */}
         <div className="flex items-center justify-center">
           <span className="text-[#1A1918] font-semibold" style={{ fontSize: 18 }}>
@@ -70,25 +60,26 @@ export default async function SharePage({ params }: Props) {
         <ProfileHeader
           displayName={profile.display_name}
           tagline={profile.tagline}
-          createdAt={profile.created_at}
         />
 
         <span className="text-[#9C9B99] font-semibold" style={{ fontSize: 12 }}>
           나의 이야기
         </span>
 
-        {QUESTIONS.map((q, i) => {
-          const answer = profile.answers[q.key];
-          if (!answer) return null;
-          return (
-            <AnswerItem
-              key={q.key}
-              questionNumber={i + 1}
-              questionText={q.text}
-              answer={answer}
-            />
-          );
-        })}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {QUESTIONS.map((q, i) => {
+            const answer = profile.answers[q.key];
+            if (!answer) return null;
+            return (
+              <AnswerItem
+                key={q.key}
+                questionNumber={i + 1}
+                questionText={q.text}
+                answer={answer}
+              />
+            );
+          })}
+        </div>
 
         {/* Footer */}
         <div
@@ -110,7 +101,9 @@ export default async function SharePage({ params }: Props) {
 
       {/* Sticky Share Bar */}
       <div className="sticky bottom-0">
-        <ShareButton username={username} />
+        <div className="max-w-[800px] mx-auto w-full">
+          <ShareButton username={username} />
+        </div>
       </div>
     </div>
   );

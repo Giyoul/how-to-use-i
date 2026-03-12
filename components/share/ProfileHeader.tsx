@@ -1,13 +1,10 @@
 type Props = {
   displayName: string;
   tagline: string | null;
-  createdAt: string;
 };
 
-export function ProfileHeader({ displayName, tagline, createdAt }: Props) {
+export function ProfileHeader({ displayName, tagline }: Props) {
   const initial = displayName.charAt(0);
-  const year = new Date(createdAt).getFullYear();
-  const month = new Date(createdAt).getMonth() + 1;
 
   return (
     <div
@@ -35,16 +32,6 @@ export function ProfileHeader({ displayName, tagline, createdAt }: Props) {
       {tagline && (
         <span style={{ color: "#FFFFFFCC", fontSize: 13 }}>{tagline}</span>
       )}
-
-      <span style={{ color: "#FFFFFFCC", fontSize: 14, lineHeight: 1.5 }}>
-        저를 더 잘 이해할 수 있도록
-        <br />
-        8가지 질문에 솔직하게 답했어요
-      </span>
-
-      <span style={{ color: "#FFFFFF80", fontSize: 12 }}>
-        {year}년 {month}월 작성
-      </span>
     </div>
   );
 }

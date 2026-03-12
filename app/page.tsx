@@ -4,12 +4,12 @@ import { Sprout } from "lucide-react";
 
 export default function OnboardingPage() {
   return (
-    <main className="flex min-h-screen flex-col" style={{ maxWidth: 402, margin: "0 auto" }}>
+    <main className="flex min-h-screen flex-col md:flex-row md:items-stretch">
       {/* Hero */}
       <section
-        className="flex flex-col items-center justify-center gap-6 px-10 pb-6"
+        className="flex flex-col items-center justify-center gap-6 px-10 pb-6 md:flex-1 md:pb-0 md:justify-center md:gap-8"
         style={{
-          height: 530,
+          minHeight: 530,
           background: "linear-gradient(180deg, #B8E8C6 0%, #E4F4EB 60%, #F5F4F1 100%)",
         }}
       >
@@ -41,7 +41,7 @@ export default function OnboardingPage() {
 
       {/* Login Card */}
       <section
-        className="flex flex-1 flex-col gap-4 px-7 pt-8 pb-12 bg-white"
+        className="flex flex-col gap-4 px-7 pt-8 pb-12 bg-white md:w-[440px] md:justify-center md:py-16 md:px-12"
         style={{ borderRadius: "24px 24px 0 0" }}
       >
         <h2
@@ -56,7 +56,8 @@ export default function OnboardingPage() {
           나만의 사용법이 완성돼요
         </p>
 
-        <div className="flex-1" />
+        <div className="flex-1 md:hidden" />
+        <div className="md:mt-8" />
 
         <KakaoLoginButton />
 
