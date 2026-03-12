@@ -100,7 +100,7 @@ export default async function SharePage({ params }: Props) {
       </div>
 
       {/* Sticky Share Bar */}
-      <div className="sticky bottom-0">
+      <div className="sticky bottom-0 bg-white w-full" style={{ boxShadow: "0 -1px 0 #E5E4E180" }}>
         <div className="max-w-[800px] mx-auto w-full">
           <ShareBar username={username} isOwner={isOwner} />
         </div>

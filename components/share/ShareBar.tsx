@@ -27,10 +27,7 @@ export function ShareBar({ username, isOwner }: Props) {
 
   return (
     <>
-      <div
-        className="w-full bg-white flex flex-col"
-        style={{ boxShadow: "0 -1px 0 #E5E4E180" }}
-      >
+      <div className="w-full flex flex-col">
         <div className="w-full" style={{ height: 1, background: "#E5E4E1" }} />
         <div className="flex gap-3" style={{ padding: "16px 20px 34px" }}>
           {isOwner && (

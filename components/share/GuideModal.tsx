@@ -1,10 +1,17 @@
 "use client";
 
 import { X } from "lucide-react";
+import { useEffect } from "react";
 
 type Props = { onClose: () => void };
 
 export function GuideModal({ onClose }: Props) {
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = prev; };
+  }, []);
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-end md:items-center justify-center"
