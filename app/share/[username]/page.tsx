@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .eq("username", username)
     .single();
 
-  if (!data) return { title: "나의 사용법" };
+  if (!data) return { title: "나 사용법" };
 
   return {
     title: `${data.display_name}의 사용법`,
@@ -53,7 +53,7 @@ export default async function SharePage({ params }: Props) {
         {/* Nav header */}
         <div className="flex items-center justify-center">
           <span className="text-[#1A1918] font-semibold" style={{ fontSize: 18 }}>
-            나의 사용법
+            나 사용법
           </span>
         </div>
 
@@ -91,7 +91,7 @@ export default async function SharePage({ params }: Props) {
           }}
         >
           <span className="text-[#6D6C6A] font-semibold" style={{ fontSize: 14 }}>
-            나의 사용법
+            나 사용법
           </span>
           <span className="text-[#9C9B99]" style={{ fontSize: 12 }}>
             howToUseI.com/share/{username}

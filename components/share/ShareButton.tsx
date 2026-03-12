@@ -12,7 +12,7 @@ export function ShareButton({ username }: Props) {
     const url = `${window.location.origin}/share/${username}`;
 
     if (navigator.share) {
-      await navigator.share({ title: "나의 사용법", url });
+      await navigator.share({ title: "나 사용법", url });
       return;
     }
 

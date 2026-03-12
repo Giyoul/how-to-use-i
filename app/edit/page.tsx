@@ -28,7 +28,7 @@ export default async function EditPage() {
             className="text-[#1A1918] font-semibold"
             style={{ fontSize: 22, letterSpacing: -0.3 }}
           >
-            나의 사용법
+            나 사용법
           </h1>
         </div>
 

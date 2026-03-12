@@ -8,7 +8,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "나의 사용법",
+  title: "나 사용법",
   description: "나를 이해하는 8가지 이야기",
   viewport: {
     width: "device-width",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "나의 사용법",
+    title: "나 사용법",
   },
   formatDetection: {
     telephone: false,

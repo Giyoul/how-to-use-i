@@ -19,7 +19,7 @@ export default function OnboardingPage() {
         >
           <Image
             src="/images/generated-1773235979771.png"
-            alt="나의 사용법"
+            alt="나 사용법"
             fill
             className="object-cover"
             priority
@@ -30,7 +30,7 @@ export default function OnboardingPage() {
           className="text-[#1A1918] font-bold tracking-tight"
           style={{ fontSize: 34, letterSpacing: -0.8 }}
         >
-          나의 사용법
+          나 사용법
         </h1>
 
         <div className="flex items-center gap-1.5">
