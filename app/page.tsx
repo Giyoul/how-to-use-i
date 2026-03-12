@@ -46,17 +46,15 @@ export default function OnboardingPage() {
       >
         {/* Made by */}
         <div className="absolute top-6 right-6 flex flex-col items-end gap-1">
-          <span className="text-[#9C9B99]" style={{ fontSize: 11 }}>
-            made by{" "}
-            <a
-              href="https://github.com/Giyoul"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#6D6C6A] font-semibold underline underline-offset-2"
-            >
-              영기
-            </a>
-          </span>
+          <a
+            href="https://github.com/Giyoul"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#9C9B99] underline underline-offset-2"
+            style={{ fontSize: 11 }}
+          >
+            made by 영기
+          </a>
           <a
             href="https://github.com/Giyoul/how-to-use-i#readme"
             target="_blank"
