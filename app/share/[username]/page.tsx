@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ProfileHeader } from "@/components/share/ProfileHeader";
 import { AnswerItem } from "@/components/share/AnswerItem";
-import { ShareButton } from "@/components/share/ShareButton";
+import { ShareBar } from "@/components/share/ShareBar";
 import { QUESTIONS } from "@/lib/questions";
 import type { Profile } from "@/lib/supabase/types";
 
@@ -36,15 +36,15 @@ export default async function SharePage({ params }: Props) {
   const username = decodeURIComponent(rawUsername);
   const supabase = await createClient();
 
-  const { data } = await supabase
-    .from("profiles")
-    .select("*")
-    .eq("username", username)
-    .single();
+  const [{ data }, { data: { user } }] = await Promise.all([
+    supabase.from("profiles").select("*").eq("username", username).single(),
+    supabase.auth.getUser(),
+  ]);
 
   if (!data) notFound();
 
   const profile = data as Profile;
+  const isOwner = user?.id === profile.id;
 
   return (
     <div className="flex flex-col min-h-screen" style={{ background: "#F5F4F1" }}>
@@ -102,7 +102,7 @@ export default async function SharePage({ params }: Props) {
       {/* Sticky Share Bar */}
       <div className="sticky bottom-0">
         <div className="max-w-[800px] mx-auto w-full">
-          <ShareButton username={username} />
+          <ShareBar username={username} isOwner={isOwner} />
         </div>
       </div>
     </div>
