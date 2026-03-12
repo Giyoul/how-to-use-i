@@ -365,7 +365,7 @@ feature/* → PR 생성 시 Preview URL 자동 생성
 
 ---
 
-### Phase 2 — 인증 플로우 🔄 진행 중
+### Phase 2 — 인증 플로우 ✅ 완료
 **목표**: 카카오 로그인 → 세션 생성 → 리다이렉트 전체 흐름 완성.
 
 ```
@@ -374,16 +374,17 @@ feature/* → PR 생성 시 Preview URL 자동 생성
 [x] 온보딩 페이지 UI 구현 (/, 로그인 버튼)
 [x] /auth/callback route 구현 (OAuth 콜백 + 신규 유저 profiles INSERT)
 [x] proxy.ts 구현 (세션 기반 접근 제어, Next.js 16 명칭)
-[ ] 로그인 → /edit 리다이렉트 검증 (카카오 동의항목 설정 완료 후)
+[x] 로그인 → /edit 리다이렉트 검증
 ```
 
-**완료 기준**: 카카오 로그인 후 /edit로 이동, Supabase에 profiles 행 생성 확인.
+**완료 기준**: 카카오 로그인 후 /edit로 이동, Supabase에 profiles 행 생성 확인. ✅
 
 **트러블슈팅 기록**:
 - `middleware.ts` → Next.js 16에서 `proxy.ts`로 파일명 변경, export 함수명도 `proxy`로 변경
 - Supabase 환경 변수 잘못 입력 시 URL 이중 연결 버그 → Vercel 환경 변수 값 재확인 필요
-- 카카오 KOE205 에러: Supabase가 기본으로 `account_email`, `profile_image` 스코프 요청 → `signInWithOAuth` 호출 시 `scopes: "profile_nickname profile_image"` 명시로 해결
-- 카카오 이메일 동의항목은 비즈니스 채널 연결 없이 활성화 불가 → 이메일 미수집으로 설계 변경
+- 카카오 KOE205 (스코프 오류): Supabase가 기본으로 `account_email`, `profile_image` 요청 → Kakao Developers에서 이메일 동의항목 활성화로 해결
+- Supabase Kakao Provider → "Allow users without an email" ON 설정 필요
+- 카카오 Redirect URI 미등록 시 "등록하지 않은 리다이렉트 URI" 에러 → 로그인 섹션의 Redirect URI에 `https://{supabase-id}.supabase.co/auth/v1/callback` 등록 필요 (로그아웃 URI와 별개)
 
 ---
 
