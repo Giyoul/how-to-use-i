@@ -1,6 +1,5 @@
 <div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:222831,10:393E46,30:37e09d,75:393E46,100:222831&height=100&section=header&text=&fontSize=0" width="100%"/>
-<br><br>
 
 # 나 사용법
 
