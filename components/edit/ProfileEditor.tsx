@@ -8,6 +8,7 @@ import { StepQuestion } from "./StepQuestion";
 import { StepNavigator } from "./StepNavigator";
 import { saveProfile } from "@/app/actions/profile";
 import { QUESTIONS, TOTAL_STEPS, type QuestionKey } from "@/lib/questions";
+import type { Profile } from "@/lib/supabase/types";
 
 const STORAGE_KEY = "howToUseI_draft";
 
@@ -17,25 +18,33 @@ type FormData = {
   answers: Record<QuestionKey, string>;
 };
 
-const EMPTY_FORM: FormData = {
-  displayName: "",
-  tagline: "",
-  answers: { q1: "", q2: "", q3: "", q4: "", q5: "", q6: "", q7: "", q8: "" },
-};
+const EMPTY_ANSWERS = { q1: "", q2: "", q3: "", q4: "", q5: "", q6: "", q7: "", q8: "" };
 
-export function ProfileEditor() {
+function profileToForm(profile: Profile | null): FormData {
+  if (!profile) return { displayName: "", tagline: "", answers: EMPTY_ANSWERS };
+  return {
+    displayName: profile.display_name,
+    tagline: profile.tagline ?? "",
+    answers: { ...EMPTY_ANSWERS, ...profile.answers },
+  };
+}
+
+type Props = { initialData: Profile | null };
+
+export function ProfileEditor({ initialData }: Props) {
   const router = useRouter();
-  const [step, setStep] = useState(0); // 0 = intro, 1~8 = questions
-  const [form, setForm] = useState<FormData>(EMPTY_FORM);
+  const [step, setStep] = useState(0);
+  const [form, setForm] = useState<FormData>(() => profileToForm(initialData));
   const [saving, setSaving] = useState(false);
 
-  // 로컬 스토리지에서 임시 저장 데이터 복원
+  // 로컬 스토리지 임시 저장 복원 (DB 데이터가 없을 때만)
   useEffect(() => {
+    if (initialData) return;
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) setForm(JSON.parse(saved));
     } catch {}
-  }, []);
+  }, [initialData]);
 
   // 변경 시 로컬 스토리지에 자동 저장
   useEffect(() => {

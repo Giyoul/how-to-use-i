@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import { ProfileEditor } from "@/components/edit/ProfileEditor";
+import type { Profile } from "@/lib/supabase/types";
 
 export default async function EditPage() {
   const supabase = await createClient();
@@ -9,6 +10,14 @@ export default async function EditPage() {
   } = await supabase.auth.getUser();
 
   if (!user) redirect("/");
+
+  const { data } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single();
+
+  const profile = data as Profile | null;
 
   return (
     <main
@@ -43,7 +52,7 @@ export default async function EditPage() {
           한 질문씩 차근차근 나를 소개해봐요
         </p>
 
-        <ProfileEditor />
+        <ProfileEditor initialData={profile} />
       </div>
     </main>
   );
