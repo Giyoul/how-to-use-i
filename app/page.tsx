@@ -41,9 +41,33 @@ export default function OnboardingPage() {
 
       {/* Login Card */}
       <section
-        className="flex flex-col gap-4 px-7 pt-8 pb-12 bg-white md:w-[440px] md:justify-center md:py-16 md:px-12"
+        className="relative flex flex-col gap-4 px-7 pt-8 pb-12 bg-white md:w-[440px] md:justify-center md:py-16 md:px-12"
         style={{ borderRadius: "24px 24px 0 0" }}
       >
+        {/* Made by */}
+        <div className="absolute top-6 right-6 flex flex-col items-end gap-1">
+          <span className="text-[#9C9B99]" style={{ fontSize: 11 }}>
+            made by{" "}
+            <a
+              href="https://github.com/Giyoul"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#6D6C6A] font-semibold underline underline-offset-2"
+            >
+              영기
+            </a>
+          </span>
+          <a
+            href="https://github.com/Giyoul/how-to-use-i#readme"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#9C9B99] underline underline-offset-2"
+            style={{ fontSize: 11 }}
+          >
+            README
+          </a>
+        </div>
+
         <h2
           className="text-[#1A1918] font-bold"
           style={{ fontSize: 24, letterSpacing: -0.3 }}
