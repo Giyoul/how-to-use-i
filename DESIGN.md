@@ -388,46 +388,57 @@ feature/* → PR 생성 시 Preview URL 자동 생성
 
 ---
 
-### Phase 3 — 편집 화면 (9단계 스텝)
+### Phase 3 — 편집 화면 (9단계 스텝) ✅ 완료
 **목표**: 질문 답변 입력 → 저장 전체 플로우 완성.
 
 ```
-[ ] ProfileEditor 클라이언트 컴포넌트 구현 (스텝 상태 관리)
-[ ] Step 1 UI: 이름 + 한 줄 소개 입력 폼
-[ ] Step 2~9 UI: 질문 카드 + 텍스트에리어 (공통 컴포넌트)
-[ ] ProgressBar 컴포넌트 (현재 스텝 / 9)
-[ ] QuestionBadge 컴포넌트 (홀수/짝수 색상 분기)
-[ ] StepNavigator (이전/다음 버튼, 유효성 검사)
-[ ] 로컬 스토리지 임시 저장 (새로고침 대비)
-[ ] 완료 시 Server Action으로 profiles upsert
-[ ] 저장 후 /share/{username} 리다이렉트
+[x] ProfileEditor 클라이언트 컴포넌트 구현 (스텝 상태 관리)
+[x] Step 1 UI: 이름 + 한 줄 소개 입력 폼
+[x] Step 2~9 UI: 질문 카드 + 텍스트에리어 (공통 컴포넌트)
+[x] ProgressBar 컴포넌트 (현재 스텝 / 9)
+[x] QuestionBadge 컴포넌트 (홀수/짝수 색상 분기)
+[x] StepNavigator (이전/다음 버튼, 유효성 검사)
+[x] 로컬 스토리지 임시 저장 (새로고침 대비)
+[x] 완료 시 Server Action으로 profiles upsert
+[x] 저장 후 /share/{username} 리다이렉트
+[x] 기존 DB 데이터 있으면 편집 폼에 미리 채워서 시작
 ```
 
-**완료 기준**: 9단계를 모두 완료하고 저장하면 DB에 답변이 저장되고 공유 페이지로 이동.
+**완료 기준**: 9단계를 모두 완료하고 저장하면 DB에 답변이 저장되고 공유 페이지로 이동. ✅
+
+**트러블슈팅 기록**:
+- Server Action에서 `redirect()` 호출 시 클라이언트 `catch` 블록이 에러로 처리해 삼킴 → `{ redirectTo: string }` 반환 후 클라이언트에서 `router.push()` 호출로 해결
+- `supabase/schema.sql` 미실행 상태에서 저장 시 500 에러 → Supabase 대시보드에서 SQL Editor로 실행 필요
 
 ---
 
-### Phase 4 — 공개 프로필 뷰
+### Phase 4 — 공개 프로필 뷰 ✅ 완료
 **목표**: /share/{username} 공개 페이지 완성. 외부 공유 가능한 상태.
 
 ```
-[ ] /share/[username] Server Component 구현 (Supabase DB 조회)
-[ ] ProfileHeader UI (아바타, 이름, 소개, 작성일)
-[ ] AnswerList + AnswerItem UI (8개 Q&A 카드)
-[ ] ShareButton 클라이언트 컴포넌트 (Web Share API + 클립보드 복사 폴백)
-[ ] 하단 Sticky 공유 바 UI
-[ ] 존재하지 않는 username 접근 시 404 처리
-[ ] OG 메타태그 설정 (카카오톡 공유 미리보기)
+[x] /share/[username] Server Component 구현 (Supabase DB 조회)
+[x] ProfileHeader UI (아바타, 이름, 소개, 작성일)
+[x] AnswerList + AnswerItem UI (8개 Q&A 카드)
+[x] ShareButton 클라이언트 컴포넌트 (Web Share API + 클립보드 복사 폴백)
+[x] 하단 Sticky 공유 바 UI
+[x] 존재하지 않는 username 접근 시 404 처리
+[x] OG 메타태그 설정 (카카오톡 공유 미리보기)
 ```
 
-**완료 기준**: /share/{username} URL을 카카오톡에 붙여넣으면 미리보기 카드가 표시됨.
+**완료 기준**: /share/{username} URL을 카카오톡에 붙여넣으면 미리보기 카드가 표시됨. ✅
+
+**트러블슈팅 기록**:
+- Next.js 16에서 동적 라우트 파라미터가 URL 인코딩된 채로 전달됨 (`%EA%B9%80...`) → `decodeURIComponent(rawUsername)` 적용 필수
+- RLS 정책의 `is_published = true` 조건으로 인해 미리보기 접근 불가 → RLS에서 is_published 조건 제거, 앱 레벨에서 접근 제어
 
 ---
 
-### Phase 5 — 마무리 및 배포
+### Phase 5 — 마무리 및 배포 🔄 진행중
 **목표**: 프로덕션 품질 확보 후 실제 배포.
 
 ```
+[x] 웹뷰/PWA 메타태그 설정 (viewport, appleWebApp, formatDetection)
+[x] 데스크탑 접근 시 배경색(#E8E7E4)으로 모바일 컨테이너 강조
 [ ] 모바일 레이아웃 전체 점검 (402px 기준)
 [ ] 에러 상태 처리 (로그인 실패, 저장 실패, 404)
 [ ] 로딩 상태 UI (스켈레톤 또는 스피너)
@@ -446,14 +457,14 @@ feature/* → PR 생성 시 Preview URL 자동 생성
 Phase 1 (세팅) ✅
     │
     ▼
-Phase 2 (인증) 🔄 ──────────────────────────────┐
+Phase 2 (인증) ✅ ──────────────────────────────┐
     │                                            │
     ▼                                            ▼
-Phase 3 (편집)                              Phase 4 (공개 프로필)
+Phase 3 (편집) ✅                          Phase 4 (공개 프로필) ✅
     │                                            │
     └─────────────────┬──────────────────────────┘
                       ▼
-                Phase 5 (배포)
+                Phase 5 (배포) 🔄
 ```
 
 > Phase 3과 Phase 4는 DB 스키마가 확정되면 병렬 진행 가능.

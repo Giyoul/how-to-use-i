@@ -10,6 +10,20 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "나의 사용법",
   description: "나를 이해하는 8가지 이야기",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "나의 사용법",
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({
@@ -19,7 +33,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className={`${outfit.variable} antialiased`}>{children}</body>
+      <body
+        className={`${outfit.variable} antialiased`}
+        style={{ background: "#E8E7E4", minHeight: "100dvh" }}
+      >
+        {children}
+      </body>
     </html>
   );
 }
