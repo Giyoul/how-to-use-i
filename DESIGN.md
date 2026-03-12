@@ -491,3 +491,4 @@ Tailwind v4 방식으로 `app/globals.css`의 `@theme` 블록에 직접 정의.
   --color-kakao: #FEE500;
 }
 ```
+
