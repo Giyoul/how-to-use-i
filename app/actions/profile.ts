@@ -2,7 +2,6 @@
 
 import { createClient } from "@/lib/supabase/server";
 import { type QuestionKey } from "@/lib/questions";
-import { redirect } from "next/navigation";
 
 export type FormData = {
   displayName: string;
@@ -10,14 +9,14 @@ export type FormData = {
   answers: Record<QuestionKey, string>;
 };
 
-export async function saveProfile(formData: FormData) {
+export async function saveProfile(formData: FormData): Promise<{ redirectTo: string }> {
   const supabase = await createClient();
 
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) redirect("/");
+  if (!user) return { redirectTo: "/" };
 
   const { data: existing } = await supabase
     .from("profiles")
@@ -25,7 +24,7 @@ export async function saveProfile(formData: FormData) {
     .eq("id", user.id)
     .single();
 
-  if (!existing) redirect("/");
+  if (!existing) return { redirectTo: "/" };
 
   const { error } = await supabase
     .from("profiles")
@@ -39,5 +38,5 @@ export async function saveProfile(formData: FormData) {
 
   if (error) throw new Error(error.message);
 
-  redirect(`/share/${existing.username}`);
+  return { redirectTo: `/share/${existing.username}` };
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { ProgressBar } from "./ProgressBar";
 import { StepIntro } from "./StepIntro";
 import { StepQuestion } from "./StepQuestion";
@@ -23,6 +24,7 @@ const EMPTY_FORM: FormData = {
 };
 
 export function ProfileEditor() {
+  const router = useRouter();
   const [step, setStep] = useState(0); // 0 = intro, 1~8 = questions
   const [form, setForm] = useState<FormData>(EMPTY_FORM);
   const [saving, setSaving] = useState(false);
@@ -73,7 +75,8 @@ export function ProfileEditor() {
     setSaving(true);
     try {
       localStorage.removeItem(STORAGE_KEY);
-      await saveProfile(form);
+      const { redirectTo } = await saveProfile(form);
+      router.push(redirectTo);
     } catch {
       setSaving(false);
     }
