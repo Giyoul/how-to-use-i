@@ -28,7 +28,7 @@ export async function GET(request: Request) {
   // profiles 테이블에 신규 유저 등록 (중복이면 무시)
   const { data: existingProfile } = await supabase
     .from("profiles")
-    .select("username")
+    .select("username, is_published")
     .eq("id", user.id)
     .single();
 
@@ -47,6 +47,12 @@ export async function GET(request: Request) {
       answers: {},
       is_published: false,
     });
+
+    return NextResponse.redirect(`${origin}/edit`);
+  }
+
+  if (existingProfile.is_published) {
+    return NextResponse.redirect(`${origin}/share/${existingProfile.username}`);
   }
 
   return NextResponse.redirect(`${origin}/edit`);
