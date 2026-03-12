@@ -16,7 +16,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .from("profiles")
     .select("display_name, tagline")
     .eq("username", username)
-    .eq("is_published", true)
     .single();
 
   if (!data) return { title: "나의 사용법" };
@@ -39,7 +38,6 @@ export default async function SharePage({ params }: Props) {
     .from("profiles")
     .select("*")
     .eq("username", username)
-    .eq("is_published", true)
     .single();
 
   if (!data) notFound();
